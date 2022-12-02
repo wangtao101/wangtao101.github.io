@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>搜索</title>
+    <title>219-王涛_搜索</title>
     <style>
         ul,
         li,
@@ -268,7 +268,7 @@
             <div class="apphome">
                 <div class="cl"><span class="sp">搜索历史</span>
                     <button id="clearSearchHistoryBtn">
-                        <!-- <img src="./img/clear.png" alt="" class="clear-img"> -->
+                        
                     </button>
                 </div>
                    
@@ -311,6 +311,7 @@
         search.setAttribute("placeholder", textArray[currentIndex]);
         currentIndex++;
     }, 3000);
+    var cl = document.getElementsByClassName("cl")[0];
     window.onload = function () {
         document.onkeydown = function (e) {
             if (e.keyCode == 13 && document.activeElement.id == "search") {
@@ -318,6 +319,7 @@
                 let historyList = document.getElementById("searchHistory");
                 let elem = `<li>${input}</li>`
                 historyList.innerHTML += elem;
+                cl.style = "display: block;";
                 document.getElementById("search").value = "";
             }
         }
@@ -326,19 +328,19 @@
     var ul = document.getElementsByClassName("hotWords-body")[0];
     document.getElementById("clearSearchHistoryBtn").addEventListener("click", function (e) {
         document.getElementById("searchHistory").innerHTML = "";
+        cl.style = "display: none;";
         e.stopPropagation();
     });
 
     function addl(li) {
         var m = `
-                        <li class="hotWord fineBorderBottom">
-                            <img src="${li.img}" alt="" class="hotWord-rank s-rank-1">
-                           
-                            <div class="hotWord-title ellipsis">${li.v2}</div>
-                            <div class="hotWord-tag s-tag-Boil">${li.v3}</div>
-                            <div class="hotWord-num">${li.v4}</div>
-                        </li>
-                        `;
+                            <li class="hotWord fineBorderBottom">
+                                <img src="${li.img}" alt="" class="hotWord-rank s-rank-1">
+                                <div class="hotWord-title ellipsis">${li.v2}</div>
+                                <div class="hotWord-tag s-tag-Boil">${li.v3}</div>
+                                <div class="hotWord-num">${li.v4}</div>
+                            </li>
+                            `;
         var liv = document.createElement("li");
         liv.innerHTML = m;
         ul.appendChild(liv);
@@ -401,9 +403,6 @@
     }
     xlhttp.open("GET", "/JSON/sousuo2.json", true);
     xlhttp.send();
-
-
-   
 
 </script>
 
