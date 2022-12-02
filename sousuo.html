@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索</title>
+    <style>
+        ul,
+        li,
+        p {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 99;
+            background-color: #fff;
+        }
+
+        .header-entity {
+            padding: 8px 14px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .searchBar {
+            display: flex;
+            align-items: center;
+        }
+
+        .searchBar-form {
+            flex: 1;
+            overflow: hidden;
+            position: relative;
+            box-sizing: border-box;
+            padding: 0 28px 0 10px;
+            height: 31px;
+            border-radius: 16px;
+            background-color: #f5f7f9;
+        }
+
+        .img {
+            flex-shrink: 0;
+            width: 15px;
+            height: 15px;
+            background: url(./img/search.png) no-repeat;
+            background-size: 100%;
+        }
+
+        .searchBar-form .s-input {
+            flex: 1;
+            border: none;
+            margin-left: 6px;
+            margin: 5px;
+            color: #333;
+            caret-color: #426bf2;
+            font-size: 15px;
+            background-color: transparent;
+            width: 100%;
+            outline: none;
+        }
+
+        .searchBar-form .s-clear {
+            position: absolute;
+            top: 9px;
+            right: 10px;
+            width: 14px;
+            height: 14px;
+            background: url(./img/search.png) no-repeat;
+            background-size: 100%;
+            display: none;
+        }
+
+        .searchBar-cancel {
+            flex-shrink: 0;
+            margin-left: 15px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .app-main {
+            position: relative;
+            top: 47px;
+        }
+
+        .searchHistory {
+            padding: 0 14px;
+        }
+
+        .searchHistory-header {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            height: 48px;
+        }
+
+        .searchHistory-title {
+            font-size: 14px;
+            line-height: 19px;
+            color: #999;
+        }
+
+        .searchHistory-arrow {
+            margin: 0 auto 0 3px;
+            width: 14px;
+            height: 14px;
+            background: url(./img/searchmoro.png) no-repeat;
+            background-size: 100%;
+        }
+
+        .searchHistory-clear {
+            width: 15px;
+            height: 15px;
+            background: url(./img/clear.png) no-repeat;
+            background-size: 100%;
+        }
+
+        ul,
+        li {
+            list-style: none;
+        }
+
+        .hotWords-header .s-label {
+            width: 88px;
+            height: 20px;
+            background: url(./img/resou.png) no-repeat;
+            background-size: 100%;
+        }
+
+        .hotWords-header .s-tip {
+            margin-left: 6px;
+            font-size: 11px;
+            color: #333;
+        }
+
+        .hotWords {
+            margin-bottom: 24px;
+        }
+
+        .hotWords-header {
+            display: flex;
+            align-items: center;
+            padding: 30px 0 10px 6px;
+            border-bottom: 1px solid rgb(241, 239, 239);
+        }
+
+        .fineBorderBottom {
+            position: relative;
+        }
+
+        .hotWord {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 48px;
+            padding: 0 7px 0 4px;
+            border-bottom: 1px solid rgb(241, 239, 239);
+        }
+
+        .hotWord-rank.s-rank-1,
+        .hotWord-rank.s-rank-2,
+        .hotWord-rank.s-rank-3 {
+            height: 21px;
+            font-size: 0;
+            margin-top: -2px;
+            background-size: 100%;
+        }
+
+        .hotWord-rank {
+            flex-shrink: 0;
+            box-sizing: border-box;
+            margin-right: 9px;
+            width: 21px;
+            text-align: center;
+            color: #999;
+        }
+
+        .ellipsis {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .hotWord-title {
+            margin-right: 5px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        .hotWord-tag.s-tag-Boil {
+            background: #ee1a1a;
+        }
+
+        .hotWord-tag {
+            flex-shrink: 0;
+            margin-right: 7px;
+            padding: 0 2.5px;
+            font-size: 12px;
+            text-align: center;
+            color: #fff;
+            border-radius: 3px;
+        }
+
+        .hotWord-num {
+            flex-shrink: 0;
+            margin-left: auto;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .hotWord-tag.s-tag-New {
+            background: #f5a623;
+        }
+
+        .hotWord-tag.s-tag-Hot {
+            background: #fe5d10;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .sp {
+            font-size: 15px;
+            color: #999;
+            font-weight: bold;
+        }
+
+        .cl {
+            margin-bottom: 7px;
+            /* display: none; */
+        }
+        button{
+            margin: 10px 0 0 267px;
+            width: 16px;
+            height: 16px;
+            background-image: url(./img/clear.png);
+            background-size: 16px;
+            border: none;
+            background-color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="app" id="app">
+        <header class="header">
+            <div class="header-entity">
+                <div class="searchBar">
+                    <div class="searchBar-form">
+                        <span class="img"></span>
+                        <input type="search" id="search" class="s-input">
+                        <div class="s-clear"></div>
+                    </div>
+                    <a href="./index.html">
+                        <div class="searchBar-cancel">取消</div>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <div class="app-main">
+            <div class="apphome">
+                <div class="cl"><span class="sp">搜索历史</span>
+                    <button id="clearSearchHistoryBtn">
+                        <!-- <img src="./img/clear.png" alt="" class="clear-img"> -->
+                    </button>
+                </div>
+                   
+                <div>
+                    <ul id="searchHistory">
+
+                    </ul>
+                </div>
+                <div class="hotWords">
+                    <div class="hotWords-header fineBorderBottom">
+                        <div class="s-label"></div>
+                        <div class="s-tip">每30分钟更新</div>
+                    </div>
+                    <ul class="hotWords-body">
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    let textArray = [
+        "聚焦二十大",
+        "告全党全军全国各族人民书",
+        "江泽民同志治丧委员会名单",
+        "神舟十五号成功发射",
+        "《三国演义》张飞扮演者李靖飞去世",
+        "卡塔尔表情包王子中文感谢中国网友",
+        "天安门下半旗致哀",
+        "世界杯16强已产生10席"
+    ];
+    let currentIndex = 1;
+    search.setAttribute("placeholder", textArray[0]);
+    setInterval(function () {
+        let search = document.getElementById("search");
+        if (currentIndex >= textArray.length) {
+            currentIndex = 0;
+        }
+        search.setAttribute("placeholder", textArray[currentIndex]);
+        currentIndex++;
+    }, 3000);
+    window.onload = function () {
+        document.onkeydown = function (e) {
+            if (e.keyCode == 13 && document.activeElement.id == "search") {
+                let input = document.getElementById("search").value;
+                let historyList = document.getElementById("searchHistory");
+                let elem = `<li>${input}</li>`
+                historyList.innerHTML += elem;
+                document.getElementById("search").value = "";
+            }
+        }
+    }
+
+    var ul = document.getElementsByClassName("hotWords-body")[0];
+    document.getElementById("clearSearchHistoryBtn").addEventListener("click", function (e) {
+        document.getElementById("searchHistory").innerHTML = "";
+        e.stopPropagation();
+    });
+
+    function addl(li) {
+        var m = `
+                        <li class="hotWord fineBorderBottom">
+                            <img src="${li.img}" alt="" class="hotWord-rank s-rank-1">
+                           
+                            <div class="hotWord-title ellipsis">${li.v2}</div>
+                            <div class="hotWord-tag s-tag-Boil">${li.v3}</div>
+                            <div class="hotWord-num">${li.v4}</div>
+                        </li>
+                        `;
+        var liv = document.createElement("li");
+        liv.innerHTML = m;
+        ul.appendChild(liv);
+    }
+    var ylhttp;
+    if (window.XMLHttpRequest) {
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        ylhttp = new XMLHttpRequest();
+    } else {
+        // IE6, IE5 浏览器执行代码
+        ylhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    ylhttp.onreadystatechange = function () {
+        if (ylhttp.readyState == 4 && ylhttp.status == 200) {
+
+            let json = JSON.parse(ylhttp.responseText);//解析为json格式
+            for (var i = 0; i < json.length; i++) {
+                addl(json[i]);
+            }
+        }
+    }
+    ylhttp.open("GET", "/JSON/sousuo1.json", true);
+    ylhttp.send();
+    function add(li) {
+        var xw = `
+            <li class="hotWord fineBorderBottom">
+                <div class="hotWord-rank s-rank">${li.v1}</div>
+                <div class="hotWord-title ellipsis">${li.v2}</div>
+                <div class="hotWord-tag s-tag-Hot">${li.v3}</div>
+                <div class="hotWord-num">${li.v4}</div>
+            </li>
+        `;
+        var xwliv = document.createElement("li");
+        xwliv.innerHTML = xw;
+        ul.appendChild(xwliv);
+    }
+    var xlhttp;
+    if (window.XMLHttpRequest) {
+        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+        xlhttp = new XMLHttpRequest();
+    } else {
+        // IE6, IE5 浏览器执行代码
+        xlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xlhttp.onreadystatechange = function () {
+        if (xlhttp.readyState == 4 && xlhttp.status == 200) {
+            let json = JSON.parse(xlhttp.responseText);//解析为json格式
+            for (var i = 0; i < json.length; i++) {
+                add(json[i]);
+            }
+            let lis = ul.querySelectorAll(".hotWord.fineBorderBottom");
+            for (let ii = 0; ii < lis.length; ii++) {
+                lis[ii].addEventListener("click", function(e) {
+                    let title = lis[ii].querySelector(".hotWord-title.ellipsis").innerHTML;
+                    document.getElementById("search").value = title;
+                    e.stopPropagation();
+                })
+            }
+        }
+    }
+    xlhttp.open("GET", "/JSON/sousuo2.json", true);
+    xlhttp.send();
+
+
+   
+
+</script>
+
+</html>

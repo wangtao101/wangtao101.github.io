@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="./font1/iconfont.css">
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <header id="indexheader" class="nav">
+        <div class="topbar">
+            <div class="ullogo"></div>
+            <div class="ulogo"></div>
+            <div class="urlogo"></div>
+        </div>
+    </header>
+    <div class="main_content">
+        <form action="./tiaozhuan.html" class="register-form" method="get" id="fm" name="fm" onsubmit="return checkform()">
+            <div class="m-container">
+                <div class="inputbox" id="account-box">
+                    <div class="u-input" box>
+                        <input type="text" name="email" id="email" placeholder="请输入邮箱地址">
+                        <span class="error">用户名应位8-16位</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fur-change-email"></div>
+            <div class="inputbox">
+                <div class="u-input" box>
+                    <input type="text" name="passwd" id="passwd"  placeholder="8-16位密码">
+                    <span class="error">密码应为8-16位</span>
+                </div>
+            </div>
+               <button type="submit">注册</button> 
+               <div class="fur-item fur-agree">
+                <label for="">
+                    <span id="j-zc-agree" class="u-zc-agree u-zc-agree-select">
+                        <input type="checkbox" class="zc-un-login" checked>
+                    </span>
+                    我同意
+                    《网易邮箱账号服务条款》和《网易隐私政策》
+                </label>
+                </div>
+                <a href="./login.html" id="changepage" class="u-logbtn bgcolor tabfocus j-redirect" >去登录&gt;&gt;</a>
+        </form>
+        <div class="third_login">
+            <p class="title">社交账号登录</p>
+            <div class="section_wrap">
+                <a href="" id="qq_login" class="login_item iconfont iconfont_qq">
+                    <span class="iconfont icon-QQ"></span>
+                </a>
+                <a href="" id="weibo_login" class="login_item iconfont iconfont_weibo">
+                    <span class="iconfont icon-shejiaotubiao-42"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+         var error = document.getElementsByClassName("error");
+            var email = document.getElementById("email");
+            var pwd = document.getElementById("pwd");
+
+            email.onchange = checkemail;
+            passwd.onchange = checkpasswd;
+
+            function checkemail() {
+                if (email.value.length >= 8 && email.value.length <= 16) {
+                    error[0].style.display = "none";
+                    return 1;
+                }
+                else {
+                    error[0].style.display = "block";
+                    return 0;
+                }
+            }
+            function checkpasswd() {
+                if (passwd.value.length >= 8 && passwd.value.length <= 16) {
+                    error[1].style.display = "none";
+                    return 1;
+                }
+                else {
+                    error[1].style.display = "block";
+                    return 0;
+                }
+            }
+
+            function checkform() {
+                var rs = checkemail() * checkpasswd();
+                if (rs === 0) {
+                    return false;
+                }
+                else {
+                    true;
+                }
+            }
+    </script>
+</body>
+</html>

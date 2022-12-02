@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>即将回到主页</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=gkb" />
+    <style>
+       
+        h1{
+            text-align: center;
+            font-size: 4rem;
+        }
+        a{
+            font-size: 4rem;
+            color: aqua;
+        }
+        span{
+            font-size: 3rem;
+            color: #f00;
+        }
+        img{
+            width: 500px;
+            height: 500px;
+           margin-top: 350px;
+           margin-left: 70px;
+        }
+        .jz{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="jz">
+        <img src="./img/yes.png" alt="">
+        <h1>操作成功</h1>
+    </div>
+    <div class="jz">
+        <a id="p1">5</a><span>秒后回到主页</span><a href="./login.html">取消</a>
+    </div>
+    
+    <script type="text/javascript">
+
+        //获取显示秒数的元素，通过定时器来更改秒数。
+
+        var num = 50000;
+        function downTime() {
+            document.getElementById('p1').innerHTML = num;
+            if (num > 0) {
+                num--;
+            } else {
+                window.location = "./index.html";
+            }
+            setTimeout("downTime()", 1000);
+        }
+        //通过window的location和history对象来控制网页的跳转。
+        downTime();
+    </script>
+</body>
+
+</html>

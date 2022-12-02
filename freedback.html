@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反馈</title>
+    <style>
+        body,
+        p,
+        ul,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin: 0;
+            padding: 0;
+            font-weight: normal;
+        }
+
+        body {
+            text-align: left;
+            background: #f6f6f6;
+            font-size: 16px;
+            color: #2a2a2a;
+        }
+
+        .index-p31 {
+            padding: 0px 3.1%;
+        }
+
+        header {
+            width: 100%;
+            color: #fff;
+            font-size: 16px;
+            overflow: hidden;
+            background-color: #df3031 !important;
+        }
+
+        header .logoBar {
+            float: left;
+            width: 80%;
+            height: 45px;
+            line-height: 45px;
+        }
+
+        .header-list .home {
+            background-position: 0% 50%;
+            float: left;
+            width: 25%;
+            margin: 0;
+        }
+
+        a:visited {
+            text-decoration: none;
+            color: #2a2a2a;
+        }
+
+        .channelTitle {
+            color: #edede4;
+            font-size: 20px;
+            text-align: center;
+            width: 75%;
+            float: right;
+        }
+
+        .suggest {
+            overflow: hidden;
+            padding: 3.75%;
+        }
+
+        form {
+            display: block;
+            margin-top: 0em;
+        }
+
+        #form_mail,
+        .form_content {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 15px 0;
+            width: 96.5%;
+            line-height: 20px;
+            padding: 5px;
+        }
+
+        .form_content {
+            min-height: 100px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            margin: 15px 0;
+            width: 96.5%;
+            line-height: 20px;
+            padding: 5px;
+        }
+
+        .label_pic {
+            display: block;
+        }
+
+        label {
+            cursor: default;
+        }
+
+        .pic_file {
+            margin: 15px auto;
+        }
+
+        button {
+            width: 100px;
+            height: 30px;
+            margin-left: 130px;
+        }
+
+        .jubao {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap" id="wrap">
+        <div class="main">
+            <header class="index-p31 header-list">
+                <div id="top" class="logoBar">
+                    <a href="" class="home" id="return"></a>
+                    <h1 class="channelTitle">首页体验反馈</h1>
+                </div>
+            </header>
+            <div class="suggest">
+                <form action="./tiaozhuan.htm" method="get" id="form" name="form" class="common_form clearfix">
+                    <div>用户体验反馈</div>
+                    <input type="text" id="form_mail" name="mail" placeholder="您的邮箱：选填，以便我们给您回复" value="">
+                    <textarea name="content" type="text" id="form_content" class="form_content"
+                        placeholder="请输入反馈，我们将不断改进" maxlength="200"></textarea>
+                    <br>
+                    <a href="./tiaozhuan.htm">
+                        <button type="submit" class="tijiao">提交</button>
+                    </a>
+                </form>
+                <div class="jubao">
+                    <p>内容举报邮箱：jubao@vip.163.com</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情</title>
+    <style>
+        html,
+        body,
+        ul,
+        li,
+        p,
+        div,
+        form,
+        span {
+            padding: 0;
+            margin: 0;
+        }
+
+        #indexheader {
+            font-size: 14.4px;
+            width: 100%;
+            position: relative;
+            z-index: 128;
+        }
+
+        .topbar {
+            height: 44.1px;
+            background-color: #f33;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .topbar .ulogo {
+            background: url(./img/logowy.png) no-repeat;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position-x: center;
+            width: 50px;
+            height: 25px;
+            margin: -12.5px 0 0 -25px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+        }
+
+        .u-logo {
+            width: 26.4px;
+            padding: 0 6px 0 12px;
+            float: left;
+            text-align: center;
+            height: 100%;
+        }
+
+        .u-logo div {
+            margin-top: 7.8px;
+            width: 26.4px;
+            height: 28.8px;
+        }
+
+        .u-logo-img1 {
+            background: url(./img/login_bg.png) 0 0 no-repeat;
+            background-size: cover;
+        }
+
+        h1 {
+            font-size: 1.7rem;
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .main .info {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+            margin: .13333rem 0 .66667rem;
+        }
+
+        a {
+            color: #1b88ee;
+            text-decoration: none;
+        }
+
+        .s-avatar {
+            border-radius: 50%;
+            height: 1.86667rem;
+            margin-left: 1.14333rem;
+            width: 1.86667rem;
+        }
+        .main .s-author {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            line-height: 1.5;
+            overflow: hidden;
+            margin: auto 3px;
+        }
+        .main .info div {
+            color: #333;
+            font-size: .74667rem;
+            font-style: normal;
+            letter-spacing: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .s-author span {
+            color: #b4b4b4;
+            font-size: .32rem;
+        }
+
+        .main .aticle-body {
+            color: #333;
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: .74667rem;
+            overflow-wrap: break-word;
+            text-align: justify;
+            margin: 20px;
+        }
+        .main .p1 {
+            color: #666;
+            line-height: 1.9rem;
+            margin-top: .36rem;
+            text-align: justify;
+            word-break: break-all;
+            font-size: 1.2rem;
+        }
+        .p2,.p3{
+            font-weight: bold;
+            line-height: 1.9rem;
+            margin-top: .36rem;
+            text-align: justify;
+            word-break: break-all;
+            font-size: 1.2rem;
+        }
+        .p4,.p5,.p6,.p7,.p8{
+            line-height: 25px;
+            font-size: 1.13rem;
+            color: rgb(35, 34, 34);
+
+        }
+        .article-footer {
+            color: #999;
+            font-size: 1.12667rem;
+            line-height: .58667rem;
+            margin: 20px;
+        }
+        .main .main-openApp {
+            align-items: center;
+            border: .02667rem solid #ee1a1a;
+            border-radius: 2.58667rem;
+            color: #ee1a1a;
+            display: flex;
+            font-size: 1.15333rem;
+            height: 2.57333rem;
+            justify-content: center;
+            margin: .53333rem auto .8rem;
+            max-width: 80%;
+            text-align: center;
+        }
+        .Menu {
+            border: 2px solid rgb(207, 14, 14);
+            border-radius: .93333rem;
+            display: flex;
+            flex-direction: column;
+            font-size: 0;
+            position: absolute;
+            right: .4rem;
+            top: -4.4rem;
+            width: 3.46667rem;
+            height: 5.4rem;
+    }
+    .Menu span{
+            border: 1px solid #999;
+            border-bottom: none;
+            border-radius: .93333rem;
+            position: fixed;
+            bottom: 5.3rem;
+            right: inherit;
+            background: 50% no-repeat;
+            background-size: 1.53333rem 1.53333rem;
+            height: 3.2rem;
+            width: 2rem;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            background-image: url(./img/toTop.png);
+    }
+    .Menu .tohome{
+            border: 1px solid rgb(14, 107, 207);
+            border-bottom: none;
+            border-radius: .93333rem;
+            position: fixed;
+            bottom: 1.8rem;
+            right: inherit;
+            background: 50% no-repeat;
+            background-size: 1.53333rem 1.53333rem;
+            height: 3.2rem;
+            width: 2rem;
+            font-size: 16px;
+            color: #fff;
+            text-align: center;
+            line-height: 100px;
+            background-image: url(./img/home.png);
+    }
+    </style>
+</head>
+
+<body>
+    <header id="indexheader" class="nav">
+        <div class="topbar">
+            <div class="ullogo"></div>
+            <div class="ulogo"></div>
+            <div class="urlogo"></div>
+        </div>
+    </header>
+    <div class="main" id="main">
+        <div>
+            <h1>习近平同牙买加总督艾伦就中牙建交50周年互致贺电</h1>
+        </div>
+        <div class="info">
+            <a href="">
+                <img class="s-avatar" src="./img/xinhuashe.png" alt="新华社客户端">
+            </a>
+            <div class="s-author">
+                <div class="author_homePage">新华社客户端</div>
+                <span>2022-11-21 16:25·北京</span>
+            </div>
+        </div>
+        <div class="aticle-body">
+            <p class="p1">[原标题：习近平同牙买加总督艾伦就中牙建交50周年互致贺电]</p>
+            <p class="p2">习近平同牙买加总督艾伦就中牙建交50周年互致贺电</p>
+            <p class="p3">李克强同牙买加总理霍尔尼斯互致贺电</p>
+            <br>
+            <p class="p4">新华社北京11月21日电 11月21日，国家主席习近平同牙买加总督艾伦互致贺电，庆祝两国建交50周年。</p><br>
+            <p class="p5">习近平指出，牙买加是英语加勒比地区最早同中国建交的国家之一。建交50年来，中牙关系始终保持良好发展势头，双方政治互信深化，务实合作成果丰硕，人民友谊日益加深。面对新冠肺炎疫情，中牙守望相助、携手抗疫，为两国友好合作注入新动力。我高度重视中牙关系发展，愿同艾伦总督一道努力，以建交50周年为新起点，深化各领域合作，高质量共建“一带一路”，共同引领中牙战略伙伴关系迈上新台阶，携手构建新时代中牙命运共同体。</p><br>
+            <p class="p6">艾伦表示，建交以来，牙中友好关系持续发展，各领域合作取得显著成就，令人欢欣鼓舞。牙方愿继续同中方加强合作，进一步深化两国战略伙伴关系。</p><br>
+            <p class="p7">同日，国务院总理李克强同牙买加总理霍尔尼斯互致贺电。李克强表示，牙买加是中国在加勒比地区的重要合作伙伴。中方愿同牙方共同努力，推动中牙战略伙伴关系进一步走深走实，更好造福两国人民。</p><br>
+            <p class="p8">霍尔尼斯表示，牙方高度赞赏中方为牙经济增长和社会发展提供的宝贵支持，愿继续致力于加强双方合作，确保牙中战略伙伴关系造福两国人民。</p><br>
+        </div>
+        <footer class="article-footer">
+            <div class="s-info">
+                责任编辑：雷晓_NB26578
+            </div>
+        </footer>
+        <br>
+        <div class="main-openApp">打开网易新闻体验更佳</div>
+    </div>
+    <div class="Menu">
+        <span class="toTop">回到顶部</span>
+        <a href="./index.html" class="tohome">回到首页</a>
+    </div>
+    <script>
+
+        var main = document.getElementById("main");
+        var toTop = document.querySelector(".toTop");
+        var tohome = document.querySelector(".tohome");
+        window.addEventListener("scroll", function () {
+                // pageXOffset：设置或返回当前页面相对于窗口显示区左上角的 X 位置。
+                // pageYOffset：设置或返回当前页面相对于窗口显示区左上角的 Y 位置。
+                // pageXOffset 和 pageYOffset 属性相等于 scrollX 和 scrollY 属性。
+                if (window.pageYOffset >= main.offsetTop + 50) {
+                    toTop.style.display = "block";
+                    tohome.style.display = "block";
+                }
+                else {
+                    toTop.style.display = "none";
+                    tohome.style.display = "none";
+                }
+
+                toTop.addEventListener("click", function () {
+                    window.scroll(0, 0);
+                })
+                tohome.addEventListener("click", function(){
+                    window.scroll(0, 0);
+                })
+            })  
+    </script>
+</body>
+
+</html>

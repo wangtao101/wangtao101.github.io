@@ -1,0 +1,190 @@
+ html,
+ body,
+ ul,
+ li,
+ p,
+ div,
+ form,
+ span {
+     padding: 0;
+     margin: 0;
+ }
+
+#indexheader {
+    font-size: 14.4px;
+    width: 100%;
+    position: relative;
+    z-index: 128;
+}
+
+.topbar {
+    height: 44.1px;
+    background-color: #f33;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.topbar .ulogo {
+    background: url(../img/logowy.png) no-repeat;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    width: 50px;
+    height: 25px;
+    margin: -12.5px 0 0 -25px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}
+.u-logo {
+    width: 26.4px;
+    padding: 0 6px 0 12px;
+    float: left;
+    text-align: center;
+    height: 100%;
+}
+
+.u-logo div {
+    margin-top: 7.8px;
+    width: 26.4px;
+    height: 28.8px;
+}
+
+.u-logo-img1 {
+    background: url(../img/login_bg.png) 0 0 no-repeat;
+    background-size: cover;
+}
+.inputbox {
+    height: 45.6px;
+    font-size: 0;
+    line-height: 1;
+    border-radius: 3px;
+    margin-top: 55px;
+    z-index: 1;
+}
+.u-input {
+    position: relative;
+    width: 240px;
+    margin: 0 auto;
+}
+
+ .u-label {
+    position: absolute;
+    width: 306px;
+    z-index: 100;
+    top: 0;
+    left: 10px;
+    color: #bdbdbd;
+    font-size: 14px;
+    font-weight: normal;
+    cursor: text;
+}
+.u-input input {
+    height: 33.6px;
+    line-height: 1;
+    padding: 6px 0;
+    font-size: 15px;
+    font-weight: 400;
+    border: 1px solid rgb(216, 210, 210);
+    width: 240px;
+}
+#passwd{
+    margin-top: -30px;
+}
+.fur-change-email {
+    position: relative;
+    width: 320px;
+    height: 16px;
+    line-height: 16px;
+    font-size: 12px;
+}
+button{
+    color: #fff;
+    background-color: #f00;
+    border:none;
+    width: 240px;
+    height: 40px;
+    margin-top: 10px;
+    margin-left: 66px;
+    font-size: 16px;
+}
+.fur-item {
+    position: relative;
+    margin: 0 auto;
+    width: 240px;
+    height: 40px;
+    font-size: 14px;
+    padding-top: 10px;
+}
+.fur-agree {
+    color: #999;
+}
+.u-logbtn.bgcolor {
+    color: #999;
+}
+.u-logbtn {
+    cursor: pointer;
+    font-size: 12px;
+    padding-left: 256px;
+    margin-top: 14px;
+    position: relative;
+    z-index: 999;
+}
+.third_login {
+    border-top: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+    margin-top: 30px;
+}
+
+.third_login .title {
+    font-size: 10.8px;
+    width: 50%;
+    margin: -5.4px auto 0;
+    text-align: center;
+    background: #fff;
+    color: #6f6f6f;
+    line-height: 1;
+    font-size: 14px;
+}
+
+.third_login .select_section {
+    padding: 13.5px 0;
+    font-size: 0;
+    text-align: center;
+}
+
+.third_login .select_section .section_wrap {
+    width: 25%;
+    margin: 13.5px 0;
+    display: inline-block;
+    text-align: center;
+}
+
+.section_wrap {
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.iconfont_qq>span {
+    color: #68a5e1;
+    font-size: 35px;
+    margin-left: 120px;
+}
+
+.iconfont_weibo>span {
+    color: #f56467;
+    font-size: 35px;
+    margin-left: 55px;
+}
+ a{
+    text-decoration: none;
+}
+ .error {
+     display: inline-block;
+     font-size: 12px;
+     font-weight: bold;
+     margin-left: 10px;
+     color: #f00;
+     display: none;
+ }
