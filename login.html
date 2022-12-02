@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>手机网易新闻-登录</title>
+    <title>219-王涛_手机网易新闻-登录</title>
     <meta name="cms_id_test" content="0040login_beta">
     <meta name="viewport"
         content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
@@ -68,7 +68,7 @@
         pwd.onchange = checkpwd;
 
         function checkemail() {
-            if (email.value.length > 8 && email.value.length < 16) {
+            if (email.value.length >= 8 && email.value.length <= 16) {
                 error[0].style.display = "none";
                 return 1;
             }
