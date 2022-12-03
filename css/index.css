@@ -36,7 +36,6 @@ div {
     height: 1.28rem;
     padding-right: 1px;
     max-width: 10rem;
-    /* width: 100%; */
 }
 
 #hometopHeader,
@@ -377,7 +376,7 @@ button {
     align-items: center;
     color: #ee1a1a;
     display: flex;
-    float: left;
+    display: inline-flex;
     font-size: 16px;
 }
 

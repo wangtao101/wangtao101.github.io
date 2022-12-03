@@ -9,7 +9,9 @@
      padding: 0;
      margin: 0;
  }
-
+body{
+    min-width: 367px;
+}
 #indexheader {
     font-size: 14.4px;
     width: 100%;
@@ -37,13 +39,7 @@
     left: 50%;
     top: 50%;
 }
-.u-logo {
-    width: 26.4px;
-    padding: 0 6px 0 12px;
-    float: left;
-    text-align: center;
-    height: 100%;
-}
+
 
 .u-logo div {
     margin-top: 7.8px;
@@ -94,7 +90,7 @@
 }
 .fur-change-email {
     position: relative;
-    width: 320px;
+    width: 100%;
     height: 16px;
     line-height: 16px;
     font-size: 12px;
@@ -103,10 +99,9 @@ button{
     color: #fff;
     background-color: #f00;
     border:none;
-    width: 240px;
+    width: 66%;
     height: 40px;
-    margin-top: 10px;
-    margin-left: 66px;
+    margin: 0 0 0 65px;
     font-size: 16px;
 }
 .fur-item {
@@ -126,11 +121,33 @@ button{
 .u-logbtn {
     cursor: pointer;
     font-size: 12px;
-    padding-left: 256px;
-    margin-top: 14px;
+    display: flex;
+    flex-direction: row-reverse;
     position: relative;
-    z-index: 999;
+    width: 83%;
+    
 }
+ .u-loginbtn {
+     display: block;
+     width: 100%;
+     height: 44px;
+     cursor: pointer;
+     text-align: center;
+     color: #fff;
+     background: #ddd;
+     font-size: 18px;
+     line-height: 44px;
+ }
+ #dologin {
+     background: #f33;
+     border-radius: 6px;
+     height: 42px;
+     font-size: 14.4px;
+     line-height: 42px;
+     width: 63%;
+     margin: 20px auto 0 auto;
+     border: none;
+ }
 .third_login {
     border-top: 1px solid #e2e2e2;
     border-bottom: 1px solid #e2e2e2;
@@ -169,13 +186,11 @@ button{
 .iconfont_qq>span {
     color: #68a5e1;
     font-size: 35px;
-    margin-left: 120px;
 }
 
 .iconfont_weibo>span {
     color: #f56467;
     font-size: 35px;
-    margin-left: 55px;
 }
  a{
     text-decoration: none;
@@ -187,4 +202,48 @@ button{
      margin-left: 10px;
      color: #f00;
      display: none;
+     margin-top: 5px;
+ }
+ .loginFooter {
+     width: 100%;
+     max-width: 400px;
+     margin: 20px auto 0px auto;
+     display: flex;
+     flex-flow: nowrap;
+     justify-content: space-around;
+ }
+ .loginFooter>.text {
+     font-size: 15px;
+     color: rgb(135, 135, 135);
+     width: 60px;
+ }
+ .marginBottom {
+     margin-bottom: 20px;
+ }
+ #login-form {
+     margin-top: 60px;
+ }
+
+ #login-form>input[type="submit"] {
+     width: 70%;
+     max-width: 400px;
+     border: none;
+     margin-top: 40px;
+ }
+ .loginInputFrame {
+     width: 70%;
+     max-width: 400px;
+     margin: 0px auto 20px auto;
+     position: relative;
+ }
+
+ .loginInput {
+     width: 100%;
+     border: 1px solid rgb(196, 196, 196);
+     border-radius: 3px;
+     line-height: 40px;
+     font-size: 16px;
+     box-sizing: border-box;
+     padding-left: 10px;
+     outline: none;
  }

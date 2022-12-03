@@ -9,9 +9,15 @@
         padding: 0;
         margin: 0;
     }
-html{
-    font-size: 50px;
-}
+
+    html {
+        font-size: 50px;
+    }
+
+    body {
+        min-width: 367px;
+    }
+
     div {
         display: block;
     }
@@ -38,24 +44,26 @@ html{
         background-position-x: center;
         width: 50px;
         height: 25px;
-        margin: -12.5px 0 0 -25px;
         position: absolute;
-        left: 50%;
-        top: 50%;
+        left: 45%;
+        top: 26%;
     }
 
     .inputbox {
-        height: 45.6px;
-        font-size: 0;
-        line-height: 1;
         border-radius: 3px;
-        z-index: 19;
         position: relative;
         margin-bottom: 0px;
         border: 1px solid #c5cdc5;
         background: #fff;
-        margin:55px auto 15px;
-        width: 230px;
+        margin: 20px auto;
+        width: 100%;
+        max-width: 400px;
+        
+    }
+
+    .inputboxContent {
+        display: flex;
+        flex-flow: nowrap;
     }
 
     .inputboxx {
@@ -69,41 +77,19 @@ html{
         border: 1px solid #c5cdc5;
         background: #fff;
         width: 230px;
-        margin:auto;
-    }
-
-    .u-logo {
-        width: 26.4px;
-        padding: 0 6px 0 12px;
-        float: left;
-        text-align: center;
-        height: 100%;
-    }
-
-    .u-logo div {
-        margin-top: 7.8px;
-        width: 26.4px;
-        height: 28.8px;
-    }
-
-    .u-logo-img1 {
-        background: url(../img/login_bg.png) 0 0 no-repeat;
-        background-size: cover;
+        margin: auto;
     }
 
     .u-input {
         position: relative;
-        float: left;
-        height: 100%;
+        width: 100%;
     }
 
     .u-input input {
-        height: 33.6px;
-        line-height: 1;
         padding: 6px 0;
         font-size: 18px;
         font-weight: 400;
-        width: 185px;
+        width: 100%;
         border: none;
         outline: none;
     }
@@ -118,12 +104,10 @@ html{
     }
 
     .j-inputtext {
-        height: 33.6px;
-        line-height: 1;
         padding: 6px 0;
         font-size: 18px;
         font-weight: 400;
-        width: 185px;
+        width: 100%;
         border: none;
         outline: none;
     }
@@ -137,9 +121,11 @@ html{
         margin-top: 16px;
         margin-bottom: 12px;
     }
-.loginbox>input{
-    border: none;
-}
+
+    .loginbox>input {
+        border: none;
+    }
+
     #dologin {
         background: #f33;
         border-radius: 6px;
@@ -175,10 +161,9 @@ html{
 
     .m-unlogin .forgetpwd,
     .m-unlogin .forgetpwdReg {
-        float: left;
+        display: inline-flex;
         height: 12px;
         text-decoration: none;
-        cursor: pointer;
         color: #999;
         font-size: 13px;
         line-height: 16px;
@@ -186,9 +171,8 @@ html{
     }
 
     .m-unlogin .u-regbtn {
-        cursor: pointer;
         font-size: 13px;
-        float: right;
+        display: inline-flex;
         line-height: 16px;
         color: #999;
         margin-top: 5px;
@@ -198,7 +182,8 @@ html{
     .third_login {
         border-top: 1px solid #e2e2e2;
         border-bottom: 1px solid #e2e2e2;
-        margin-top: 30px;
+        margin: 30px auto 0px auto;
+        max-width: 400px;
     }
 
     .third_login .title {
@@ -232,20 +217,85 @@ html{
     .iconfont_qq>span {
         color: #68a5e1;
         font-size: 35px;
-        margin-left: 120px;
     }
 
     .iconfont_weibo>span {
         color: #f56467;
         font-size: 35px;
-        margin-left: 55px;
     }
 
-        .error {
-            display: inline-block;
-            font-size: 12px;
-            font-weight: bold;
-            margin-left: 10px;
-            color: #f00;
-            display: none;
-        }
+    .error {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 10px;
+        color: #f00;
+        display: none;
+    }
+
+    #login-form {
+        margin-top: 20px;
+    }
+
+    #login-form>input[type="submit"] {
+        width: 70%;
+        max-width: 400px;
+        border: none;
+        margin-top: 40px;
+    }
+
+    .loginInputFrame {
+        width: 70%;
+        max-width: 400px;
+        margin: 0px auto 20px auto;
+        position: relative;
+    }
+
+    .loginInput {
+        width: 100%;
+        border: 1px solid rgb(196, 196, 196);
+        border-radius: 3px;
+        line-height: 40px;
+        font-size: 16px;
+        box-sizing: border-box;
+        padding-left: 40px;
+        outline: none;
+    }
+
+    .u-logo {
+        width: 26.4px;
+        height: 28.8px;
+        text-align: center;
+        position: absolute;
+        top: 32px;
+        left: 8px;
+    }
+
+    .u-logo div {
+        width: 26.4px;
+        height: 28.8px;
+    }
+
+    .u-logo-img1 {
+        background: url(../img/login_bg.png) 0 0 no-repeat;
+        background-size: cover;
+    }
+
+    .loginFooter {
+        width: 100%;
+        max-width: 400px;
+        margin: 20px auto 0px auto;
+        display: flex;
+        flex-flow: nowrap;
+        justify-content: space-around;
+    }
+
+    .loginFooter>.text {
+        font-size: 15px;
+        color: rgb(135, 135, 135);
+        width: 60px;
+    }
+
+    .marginBottom {
+        margin-bottom: 20px;
+    }
