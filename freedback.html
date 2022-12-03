@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>反馈</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>219-王涛_反馈</title>
     <style>
         body,
         p,
@@ -26,6 +26,7 @@
             background: #f6f6f6;
             font-size: 16px;
             color: #2a2a2a;
+            display: flex;
         }
 
         .index-p31 {
@@ -41,7 +42,6 @@
         }
 
         header .logoBar {
-            float: left;
             width: 80%;
             height: 45px;
             line-height: 45px;
@@ -49,7 +49,6 @@
 
         .header-list .home {
             background-position: 0% 50%;
-            float: left;
             width: 25%;
             margin: 0;
         }
@@ -63,8 +62,8 @@
             color: #edede4;
             font-size: 20px;
             text-align: center;
-            width: 75%;
-            float: right;
+            width: 100%;
+            margin: auto 35px;
         }
 
         .suggest {
@@ -110,9 +109,9 @@
         }
 
         button {
-            width: 100px;
-            height: 30px;
-            margin-left: 130px;
+            width: 20%;
+            height: 25px;
+            margin: auto;
         }
 
         .jubao {
@@ -133,13 +132,13 @@
                 </div>
             </header>
             <div class="suggest">
-                <form action="./tiaozhuan.htm" method="get" id="form" name="form" class="common_form clearfix">
+                <form action="./tiaozhuan.html" method="get" id="form" name="form" class="common_form clearfix">
                     <div>用户体验反馈</div>
                     <input type="text" id="form_mail" name="mail" placeholder="您的邮箱：选填，以便我们给您回复" value="">
                     <textarea name="content" type="text" id="form_content" class="form_content"
                         placeholder="请输入反馈，我们将不断改进" maxlength="200"></textarea>
                     <br>
-                    <a href="./tiaozhuan.htm">
+                    <a href="./tiaozhuan.html">
                         <button type="submit" class="tijiao">提交</button>
                     </a>
                 </form>

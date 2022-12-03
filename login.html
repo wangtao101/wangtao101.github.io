@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <title>219-王涛_手机网易新闻-登录</title>
     <meta name="cms_id_test" content="0040login_beta">
-    <meta name="viewport"
-        content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta content="telephone=no" name="format-detection">
     <link rel="stylesheet" href="./font1/iconfont.css">
     <link rel="stylesheet" href="./css/login.css">
@@ -21,35 +20,31 @@
         </div>
     </header>
     <form action="./tiaozhuan.html" id="login-form" method="get" id="fm" name="fm" onsubmit="return checkform()">
-        <div class="inputbox" id="account-box">
+        <div class="loginInputFrame">
+            <input class="loginInput" type="text" id="email" name="email" placeholder="请输入邮箱地址">
             <div class="u-logo">
                 <div class="u-logo-img1"></div>
             </div>
-            <div class="u-input">
-                <input class="j-inputtext" type="text" id="email" name="email" placeholder="请输入邮箱地址">
-                <span class="error">用户名应为8-16位</span>
-                <div class="fur-chage-email"></div>
-            </div>
+            <div class="error">用户名应为8-16位</div>
         </div>
-        <div class="inputboxx">
+
+        <div class="loginInputFrame">
+            <input class="loginInput" type="password" id="pwd" name="pwd" placeholder="请输入密码">
             <div class="u-logo">
                 <div class="u-logo-img2"></div>
             </div>
-            <input class="j-inputtext" type="password" id="pwd" name="pwd" placeholder="请输入密码">
-            <span class="error">密码应为8-16位</span>
+            <div class="error">密码应为8-16位</div>
         </div>
-        <div class="f-cd loginbox">
-            <!-- <a href="" id="dologin" data-action="dologin" class="u-loginbtn" tabindex="8">�?&nbsp;&nbsp;�?</a> -->
-            <input type="submit" value="登&nbsp;&nbsp;录" id="dologin" class="u-loginbtn">
-        </div>
-        <div class="m-unlogin">
-            <a href="" class="forgetpwd j-inputtext" data-action="changepage">忘记密码</a>
-            <a href="./register.html" id="changepage" data-action="changepage" class="u-regbtn ">去注册</a>
-        </div>
+
+        <input type="submit" value="登 录" id="dologin" class="u-loginbtn">
     </form>
+    <div class="loginFooter">
+        <a class="text" href="" data-action="changepage">忘记密码</a>
+        <a class="text" href="./register.html" id="changepage" data-action="changepage" class="u-regbtn ">去注册</a>
+    </div>
     <div class="third_login">
         <p class="title">社交账号登录</p>
-        <div class="section_wrap">
+        <div class="loginFooter marginBottom">
             <a href="" id="qq_login" class="login_item iconfont iconfont_qq">
                 <span class="iconfont icon-QQ"></span>
             </a>
@@ -58,6 +53,35 @@
             </a>
         </div>
     </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
 
     <script>
         var error = document.getElementsByClassName("error");
@@ -68,7 +92,7 @@
         pwd.onchange = checkpwd;
 
         function checkemail() {
-            if (email.value.length >= 8 && email.value.length <= 16) {
+            if (email.value.length >= 8 && email.value.length < 16) {
                 error[0].style.display = "none";
                 return 1;
             }
