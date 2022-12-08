@@ -13,15 +13,13 @@
     <div id="app">
         <div id="home-main">
             <header id="hometopHeader">
-                <div class="slogo">手机网易网</div>
+                <div class="slogo">手机网易</div>
                 <div class="search">
                     <div class="words">
-                        <a href="./sousuo.html"
-                            class="word">
+                        <a href="./sousuo.html" class="word">
                             <span>
                                 <img class="search-img" src="./img/search.png">
-                                <!-- <span class="span-img" >聚焦二十大</span> -->
-                                <input type="text"  id="search">
+                                <input type="text" id="search">
                             </span>
                         </a>
                     </div>
@@ -31,9 +29,9 @@
             <div id="sub">
                 <nav id="subNav">
                     <a href="" class="nav-item nav-item-active" id="aa">要闻</a>
-                    <a href="" class="nav-item" id="a1">推荐</a>
-                    <a href="" class="nav-item" id="a2">原创</a>
-                    <a href="" class="nav-item" id="a3">热点</a>
+                    <a href="./tuijian.html" class="nav-item" id="a1">推荐</a>
+                    <a href="./yuanchuang.html" class="nav-item" id="a2">原创</a>
+                    <a href="./hot.html" class="nav-item" id="a3">热点</a>
                     <span class="nav-slider"></span>
                 </nav>
             </div>
@@ -75,7 +73,7 @@
                     <button id="s-more" onclick=""></button>
                 </nav>
                 <div class="home-topNews">
-                
+
                 </div>
                 <div class="home-channelNews">
                     <ul>
@@ -85,7 +83,7 @@
                             进入今日要闻
                             <sapn class="i-arrow">
                                 <button></button>
-                            </span>
+                                </span>
                         </a>
                         <a href="">
                             打开APP
@@ -105,7 +103,7 @@
                         </nav>
                     </header>
                     <ul>
-                       
+
                     </ul>
                     <footer>
                         <a href="" id="jz">
@@ -126,25 +124,8 @@
                         </nav>
                     </header>
                     <ul>
-                        <li>
-                            <a href="" class="cards-one" cards-news>
-                                <article>
-                                    <div class="s-left">
-                                        <h4>真的瘦了！沈腾拍大片颜值重回巅峰</h4>
-                                        <div class="s-info">
-                                            <span class="s-source">网易娱乐</span>
-                                            <span class="s-reply">224跟帖</span>
-                                            <span class="s-holder"></span>
-                                            <span class="s-openApp">打开APP</span>
-                                        </div>
-                                    </div>
-                                    <div class="s-right">
-                                        <img src="./img/yule3.png">
-                                    </div>
-                                </article>
-                            </a>
-                        </li>
-                        
+                      
+
                     </ul>
                     <footer>
                         <a href="" id="jz">
@@ -164,7 +145,7 @@
                         </nav>
                     </header>
                     <ul>
-                        
+
                     </ul>
                     <footer>
                         <a href="" id="jz">
@@ -184,7 +165,7 @@
                         </nav>
                     </header>
                     <ul>
-                        
+
                     </ul>
                     <footer>
                         <a href="" id="jz">
@@ -256,7 +237,7 @@
     </div>
 
     <script type="text/javascript">
-        
+
         window.onscroll = function () {
             var st = document.documentElement.scrollTop || document.body.scrollTop;
             var aa = document.getElementById("aa");
@@ -268,7 +249,7 @@
             if (st > hometopHeader.offsetHeight) {
                 //clientHeight：元素的像素高度，包含元素的高度+内边距，不包含水平滚动条、边框和外边距
                 //offsetHeight：元素的像素高度，包含元素的垂直内边距+边框+水平滚动条的高度
-                //scrollHeight：元素内容的高度，包括溢出的不可见内容。
+                //scrollHeight：元素内容的高度，包括溢出的不可见内容距
                 // box.style.display = "block";
                 // sub.style.position = "fixed";
                 sub.style = "background: #ee1a1a;left: 50%;transform: translateX(-50%);margin: 0;position: fixed;top: 0;z-index: 199";
@@ -337,10 +318,10 @@
         var ul4 = document.getElementsByClassName("home-channelNews")[3].getElementsByTagName("ul")[0];
         var ul5 = document.getElementsByClassName("home-channelNews")[4].getElementsByTagName("ul")[0];
         var ul6 = document.getElementsByClassName("home-topNews")[0];
-            console.log(ul6);
+        // console.log(ul6);
         function addLI(li) {
             var m = `
-                <a href="" class="cards-one" cards-news>
+                <a href="" class="cards-one cards-news">
                                 <article>
                                     <div class="s-left">
                                         <h4>${li.title}</h4>
@@ -362,25 +343,25 @@
             nlix.innerHTML = m;
             ul1.appendChild(nlix);
         }
-           var xmlhttp;
-            if (window.XMLHttpRequest) {
-                //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-                xmlhttp = new XMLHttpRequest();
-            } else {
-                // IE6, IE5 浏览器执行代码
-                xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange = function () {
-                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var xmlhttp;
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // IE6, IE5 浏览器执行代码
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function () {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
-                    var json = JSON.parse(xmlhttp.responseText);//解析为json格式
-                    for (var i = 0; i < json.length; i++) {
-                        addLI(json[i]);
-                    }
+                var json = JSON.parse(xmlhttp.responseText);//解析为json格式
+                for (var i = 0; i < json.length; i++) {
+                    addLI(json[i]);
                 }
             }
-            xmlhttp.open("GET", "/JSON/index1.json", true);
-            xmlhttp.send();
+        }
+        xmlhttp.open("GET", "/JSON/index1.json", true);
+        xmlhttp.send();
 
         function addTiyu(li) {
             var n = `
@@ -405,7 +386,7 @@
             nliy.innerHTML = n;
             ul2.appendChild(nliy);
         }
-     
+
         var ymlhttp;
         if (window.XMLHttpRequest) {
             //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
@@ -426,7 +407,7 @@
         ymlhttp.open("GET", "/JSON/index2.json", true);
         ymlhttp.send();
 
-        function addYule(li){
+        function addYule(li) {
             var k = `
             <a href="" class="cards-one" cards-news>
                                 <article>
@@ -436,6 +417,7 @@
                                             <span class="s-source">${li.s1}</span>
                                             <span class="s-reply">${li.s2}</span>
                                             <span class="s-holder"></span>
+                                            <span class="s-openApp">${li.p}</span>
                                         </div>
                                     </div>
                                     <div class="s-right">
@@ -449,27 +431,27 @@
             ul3.appendChild(nliz);
         }
         var zmlhttp;
-            if (window.XMLHttpRequest) {
-                //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-                zmlhttp = new XMLHttpRequest();
-            } else {
-                // IE6, IE5 浏览器执行代码
-                zmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            zmlhttp.onreadystatechange = function () {
-                if (zmlhttp.readyState == 4 && zmlhttp.status == 200) {
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            zmlhttp = new XMLHttpRequest();
+        } else {
+            // IE6, IE5 浏览器执行代码
+            zmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        zmlhttp.onreadystatechange = function () {
+            if (zmlhttp.readyState == 4 && zmlhttp.status == 200) {
 
-                    let json = JSON.parse(zmlhttp.responseText);//解析为json格式
-                    for (var i = 0; i < json.length; i++) {
-                        addYule(json[i]);
-                    }
+                let json = JSON.parse(zmlhttp.responseText);//解析为json格式
+                for (var i = 0; i < json.length; i++) {
+                    addYule(json[i]);
                 }
             }
-            zmlhttp.open("GET", "/JSON/index3.json", true);
-            zmlhttp.send();
+        }
+        zmlhttp.open("GET", "/JSON/index3.json", true);
+        zmlhttp.send();
 
-            function addJunshi(li){
-                var j = `
+        function addJunshi(li) {
+            var j = `
                 <a href="" class="cards-bigImg" cards-news>
                                 <article>
                                     <div class="s-img-wrap">
@@ -486,32 +468,32 @@
                                 </article>
                             </a>
                 `;
-                var nlij = document.createElement("li");
-                nlij.innerHTML = j;
-                ul4.appendChild(nlij);
+            var nlij = document.createElement("li");
+            nlij.innerHTML = j;
+            ul4.appendChild(nlij);
+        }
+        var jmlhttp;
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            jmlhttp = new XMLHttpRequest();
+        } else {
+            // IE6, IE5 浏览器执行代码
+            jmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        jmlhttp.onreadystatechange = function () {
+            if (jmlhttp.readyState == 4 && jmlhttp.status == 200) {
+
+                let json = JSON.parse(jmlhttp.responseText);//解析为json格式
+                for (var i = 0; i < json.length; i++) {
+                    addJunshi(json[i]);
+                }
             }
-            var jmlhttp;
-                if (window.XMLHttpRequest) {
-                    //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-                    jmlhttp = new XMLHttpRequest();
-                } else {
-                    // IE6, IE5 浏览器执行代码
-                    jmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
-                jmlhttp.onreadystatechange = function () {
-                    if (jmlhttp.readyState == 4 && jmlhttp.status == 200) {
+        }
+        jmlhttp.open("GET", "/JSON/index4.json", true);
+        jmlhttp.send();
 
-                        let json = JSON.parse(jmlhttp.responseText);//解析为json格式
-                        for (var i = 0; i < json.length; i++) {
-                            addJunshi(json[i]);
-                        }
-                    }
-                }
-                jmlhttp.open("GET", "/JSON/index4.json", true);
-                jmlhttp.send();
-
-                function addKeji(li){
-                    var v = `
+        function addKeji(li) {
+            var v = `
                     <a href="" class="cards-one" cards-news>
                                 <article>
                                     <div class="s-left">
@@ -530,32 +512,32 @@
                                 </article>
                             </a>
                     `;
-                    var nliv = document.createElement("li");
-                    nliv.innerHTML = v;
-                    ul5.appendChild(nliv);
+            var nliv = document.createElement("li");
+            nliv.innerHTML = v;
+            ul5.appendChild(nliv);
+        }
+        var vmlhttp;
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            vmlhttp = new XMLHttpRequest();
+        } else {
+            // IE6, IE5 浏览器执行代码
+            vmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        vmlhttp.onreadystatechange = function () {
+            if (vmlhttp.readyState == 4 && vmlhttp.status == 200) {
+
+                let json = JSON.parse(vmlhttp.responseText);//解析为json格式
+                for (var i = 0; i < json.length; i++) {
+                    addKeji(json[i]);
                 }
-                var vmlhttp;
-                    if (window.XMLHttpRequest) {
-                        //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-                        vmlhttp = new XMLHttpRequest();
-                    } else {
-                        // IE6, IE5 浏览器执行代码
-                        vmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                    }
-                    vmlhttp.onreadystatechange = function () {
-                        if (vmlhttp.readyState == 4 && vmlhttp.status == 200) {
+            }
+        }
+        vmlhttp.open("GET", "/JSON/index5.json", true);
+        vmlhttp.send();
 
-                            let json = JSON.parse(vmlhttp.responseText);//解析为json格式
-                            for (var i = 0; i < json.length; i++) {
-                                addKeji(json[i]);
-                            }
-                        }
-                    }
-                    vmlhttp.open("GET", "/JSON/index5.json", true);
-                    vmlhttp.send();
-
-                    function addXw(a){
-                        var xw = `
+        function addXw(a) {
+            var xw = `
                         <a href="${a.link}" class="cards-one">
                         <article>
                             <div class="s-left">
@@ -568,50 +550,50 @@
                         </article>
                     </a>
                         `;
-                        var xwliv = document.createElement("a");
-                        xwliv.innerHTML = xw;
-                        ul6.appendChild(xwliv);
-                    }
-                    var xwmlhttp;
-                        if (window.XMLHttpRequest) {
-                            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
-                            xwmlhttp = new XMLHttpRequest();
-                        } else {
-                            // IE6, IE5 浏览器执行代码
-                            xwmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                        }
-                        xwmlhttp.onreadystatechange = function () {
-                            if (xwmlhttp.readyState == 4 && vmlhttp.status == 200) {
+            var xwliv = document.createElement("a");
+            xwliv.innerHTML = xw;
+            ul6.appendChild(xwliv);
+        }
+        var xwmlhttp;
+        if (window.XMLHttpRequest) {
+            //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+            xwmlhttp = new XMLHttpRequest();
+        } else {
+            // IE6, IE5 浏览器执行代码
+            xwmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xwmlhttp.onreadystatechange = function () {
+            if (xwmlhttp.readyState == 4 && vmlhttp.status == 200) {
 
-                                let json = JSON.parse(xwmlhttp.responseText);//解析为json格式
-                                for (var i = 0; i < json.length; i++) {
-                                    addXw(json[i]);
-                                }
-                            }
-                        }
-                        xwmlhttp.open("GET", "/JSON/index6.json", true);
-                        xwmlhttp.send();
+                let json = JSON.parse(xwmlhttp.responseText);//解析为json格式
+                for (var i = 0; i < json.length; i++) {
+                    addXw(json[i]);
+                }
+            }
+        }
+        xwmlhttp.open("GET", "/JSON/index6.json", true);
+        xwmlhttp.send();
 
-                        let textArray = [
-                                "聚焦二十大",
-                                "告全党全军全国各族人民书",
-                                "江泽民同志治丧委员会名单",
-                                "神舟十五号成功发射",
-                                "《三国演义》张飞扮演者李靖飞去世",
-                                "卡塔尔表情包王子中文感谢中国网友",
-                                "天安门下半旗致哀",
-                                "世界杯16强已产生10席"
-                            ];
-                            let currentIndex = 1;
-                            search.setAttribute("placeholder", textArray[0]);
-                            setInterval(function () {
-                                let search = document.getElementById("search");
-                                if (currentIndex >= textArray.length) {
-                                    currentIndex = 0;
-                                }
-                                search.setAttribute("placeholder", textArray[currentIndex]);
-                                currentIndex++;
-                            }, 3000);
+        let textArray = [
+            "聚焦二十大",
+            "告全党全军全国各族人民书",
+            "江泽民同志治丧委员会名单",
+            "神舟十五号成功发射",
+            "《三国演义》张飞扮演者李靖飞去世",
+            "卡塔尔表情包王子中文感谢中国网友",
+            "天安门下半旗致哀",
+            "世界杯16强已产生10强"
+        ];
+        let currentIndex = 1;
+        search.setAttribute("placeholder", textArray[0]);
+        setInterval(function () {
+            let search = document.getElementById("search");
+            if (currentIndex >= textArray.length) {
+                currentIndex = 0;
+            }
+            search.setAttribute("placeholder", textArray[currentIndex]);
+            currentIndex++;
+        }, 3000);
     </script>
 </body>
 

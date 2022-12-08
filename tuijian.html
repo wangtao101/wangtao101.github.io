@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>219_王涛-推荐</title>
+
+    <style>
+        body,
+        ul,
+        li,
+        p {
+            background: #fff;
+            color: #333;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        html {
+            font-size: 37.5px;
+            overflow: auto
+        }
+
+        body {
+            min-width: 290px;
+        }
+
+        #app {
+            margin: 0 auto;
+            max-width: 10rem;
+            position: relative;
+        }
+
+        div {
+            display: block;
+        }
+
+        #hometopHeader {
+            align-items: center;
+            background: #ef4645;
+            color: #fff;
+            display: flex;
+            height: 1.28rem;
+            padding-right: 1px;
+            max-width: 10rem;
+            margin: auto;
+        }
+
+        #hometopHeader,
+        .slogo,
+        .user {
+            box-sizing: content-box;
+            flex-shrink: 0;
+            font-size: 0;
+        }
+
+        #hometopHeader .slogo {
+            align-self: stretch;
+            background: url(./img/logowy.png) 50% no-repeat;
+            background-size: 1.2rem .58667rem;
+            padding: 0 .26667rem 0 .56rem;
+            width: 1.2rem;
+        }
+
+        .search,
+        .words {
+            display: flex;
+            flex-grow: 1;
+            overflow: hidden;
+        }
+
+        .word {
+            position: relative;
+        }
+
+        .search {
+            align-items: flex-start;
+            background: rgba(0, 0, 0, .1);
+            border-radius: .46667rem;
+            color: #fff;
+            font-size: .4rem;
+            height: .85333rem;
+            justify-content: flex-start;
+            margin: 0 .4rem 0 0;
+            padding: 0 .13333rem 0 .26667rem;
+            position: relative;
+        }
+
+        .search-img {
+            width: 20px;
+            height: 20px;
+            margin-top: 6px;
+
+        }
+
+        #search {
+            font-size: 16px;
+            position: relative;
+            top: -24px;
+            left: 24px;
+            background: none;
+            border: none;
+            outline: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .span-img {
+            font-size: 17px;
+            top: -3px;
+            position: relative;
+            left: 3px;
+        }
+
+        button {
+            background: rgba(0, 0, 0, .1) url(./img/wode1.png) 50% no-repeat;
+            background-size: .66667rem .66667rem;
+            border: none;
+            border-radius: 50%;
+            height: .66667rem;
+            margin: 0 .37333rem 0 0;
+            padding: .09333rem;
+            width: .66667rem;
+        }
+
+        #subNav {
+            border-bottom: 1px solid #eee;
+            display: flex;
+            font-size: .45333rem;
+            height: 1.26667rem;
+            justify-content: space-around;
+            max-width: 10rem;
+            position: relative;
+            width: 100%;
+        }
+
+        #subNav a {
+            align-items: center;
+            color: #333;
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 0;
+            justify-content: center;
+            margin: 0 .13333rem;
+            position: relative;
+        }
+
+        #sub {
+            margin: 0 auto;
+            max-width: 10rem;
+            width: 100%;
+        }
+
+        #sub .nav-item-active {
+            color: #ee1a1a;
+            border-bottom: 1px #ee1a1a;
+        }
+
+        .nav-item {
+            align-items: center;
+            color: #333;
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 0;
+            justify-content: center;
+            margin: 0 .13333rem;
+            position: relative;
+        }
+
+        .nav-slider {
+            left: 12.5%;
+        }
+
+        .cards-one {
+            color: rgb(40, 40, 40);
+            font-size: .48rem;
+
+        }
+
+        .home-topNews .cards-one div {
+            min-height: unset;
+        }
+
+        .home-topNews .cards-one div .s-left {
+            min-height: unset;
+        }
+
+        .home-topNews .cards-one div h4 {
+            max-height: 2rem;
+        }
+
+        .cards-one div h4 {
+            color: rgb(37, 36, 36);
+            font-size: .48rem;
+            font-weight: 400;
+            line-height: .66667rem;
+            margin: 0;
+            max-height: 1.33333rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .cards-one div {
+            align-items: flex-start;
+            display: flex;
+            min-height: 0.89333rem;
+            margin: 5px;
+
+        }
+
+        .cards-one div .s-left {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: 1;
+            justify-content: space-between;
+            min-height: 2.33333rem;
+            min-width: 0;
+            width: 60%;
+        }
+
+        .cards-one div .s-right {
+            border-radius: .08rem;
+            flex-shrink: 0;
+            height: 2.22667rem;
+            margin: 0 0 0 .4rem;
+            position: relative;
+            width: 2.90667rem;
+        }
+
+        .s-info {
+            align-items: center;
+            color: #999;
+            display: flex;
+            font-size: .32rem;
+        }
+
+        .s-source {
+            margin: .3rem .21333rem 0 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: .32rem;
+        }
+
+        .s-reply {
+            flex-shrink: 0;
+            margin: .3rem 1.81333rem 0 0;
+            font-size: .32rem;
+        }
+
+        .s-holder {
+            flex-grow: 1;
+        }
+
+        .s-right img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        #dv {
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div id="home-main">
+            <header id="hometopHeader">
+                <div class="slogo">手机网易</div>
+                <div class="search">
+                    <div class="words">
+                        <a href="./sousuo.html" class="word">
+                            <span>
+                                <img class="search-img" src="./img/search.png">
+                                <input type="text" id="search">
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <a href="./login.html"><button class="user">用户</button></a>
+            </header>
+            <div id="sub">
+                <nav id="subNav">
+                    <a href="./index.html" class="nav-item" id="aa">要闻</a>
+                    <a href="" class="nav-item nav-item-active" id="a1">推荐</a>
+                    <a href="./yuanchuang.html" class="nav-item" id="a2">原创</a>
+                    <a href="./hot.html" class="nav-item" id="a3">热点</a>
+                    <span class="nav-slider"></span>
+                </nav>
+            </div>
+            <div>
+                <ul>
+                    <a href="" class="cards-one cards-news">
+                        <div id="dv">
+                            <div class="s-left">
+                                <h4>世界杯16强已产生10强</h4>
+                                <div class="s-info">
+                                    <span class="s-source">新华社</span>
+                                    <span class="s-reply">1跟贴</span>
+                                    <span class="s-holder"></span>
+                                </div>
+                            </div>
+                            <div class="s-right">
+                                <img src="./img/tiyu.png">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="cards-one cards-news">
+                        <div id="dv">
+                            <div class="s-left">
+                                <h4>无限怀念毛主席</h4>
+                                <div class="s-info">
+                                    <span class="s-source">老王谈现代</span>
+                                    <span class="s-reply">6跟贴</span>
+                                    <span class="s-holder"></span>
+                                </div>
+                            </div>
+                            <div class="s-right">
+                                <img src="./img/mzx.png">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="cards-one cards-news">
+                        <div id="dv">
+                            <div class="s-left">
+                                <h4>从莲花清瘟"错别字做一场中医科普"</h4>
+                                <div class="s-info">
+                                    <span class="s-source">齐鲁网</span>
+                                    <span class="s-reply">301跟贴</span>
+                                    <span class="s-holder"></span>
+                                </div>
+                            </div>
+                            <div class="s-right">
+                                <img src="./img/lianhua.png">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="cards-one cards-news">
+                        <div id="dv">
+                            <div class="s-left">
+                                <h4>都美竹：看到吴亦凡坐牢高兴得说不出话来</h4>
+                                <div class="s-info">
+                                    <span class="s-source">达达说大话</span>
+                                    <span class="s-reply">3891跟贴</span>
+                                    <span class="s-holder"></span>
+                                </div>
+                            </div>
+                            <div class="s-right">
+                                <img src="./img/wuyifan.png">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="cards-one cards-news">
+                        <div id="dv">
+                            <div class="s-left">
+                                <h4>真能威慑中国？美军旗舰B-21轰炸机亮相，美方：打钱</h4>
+                                <div class="s-info">
+                                    <span class="s-source">国防时报看点</span>
+                                    <span class="s-reply">1798跟贴</span>
+                                    <span class="s-holder"></span>
+                                </div>
+                            </div>
+                            <div class="s-right">
+                                <img src="./img/dacan.png">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="cards-one cards-news">
+                        <div id="dv">
+                            <div class="s-left">
+                                <h4>二战时期，丘吉尔好像拿着一台智能手机，而且屏幕至少6英寸以上</h4>
+                                <div class="s-info">
+                                    <span class="s-source">敏敏的旅途</span>
+                                    <span class="s-reply">3651跟贴</span>
+                                    <span class="s-holder"></span>
+                                </div>
+                            </div>
+                            <div class="s-right">
+                                <img src="./img/qiujier.png">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="cards-one cards-news">
+                        <div id="dv">
+                            <div class="s-left">
+                                <h4>小区解封后，谁是最失落的人？</h4>
+                                <div class="s-info">
+                                    <span class="s-source">城内事称外说</span>
+                                    <span class="s-reply">156跟贴</span>
+                                    <span class="s-holder"></span>
+                                </div>
+                            </div>
+                            <div class="s-right">
+                                <img src="./img/xiaoqu.png">
+                            </div>
+                        </div>
+                    </a>
+                    <a href="" class="cards-one cards-news">
+                        <div id="dv">
+                            <div class="s-left">
+                                <h4>国务院联防联控机制印发新冠病毒抗原检测应用方案</h4>
+                                <div class="s-info">
+                                    <span class="s-source">中国日报网</span>
+                                    <span class="s-reply">1525跟贴</span>
+                                    <span class="s-holder"></span>
+                                </div>
+                            </div>
+                            <div class="s-right">
+                                <img src="./img/gongao.png">
+                            </div>
+                        </div>
+                    </a>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let textArray = [
+            "聚焦二十大",
+            "告全党全军全国各族人民书",
+            "江泽民同志治丧委员会名单",
+            "神舟十五号成功发射",
+            "《三国演义》张飞扮演者李靖飞去世",
+            "卡塔尔表情包王子中文感谢中国网友",
+            "天安门下半旗致哀",
+            "世界杯16强已产生10强"
+        ];
+        let currentIndex = 1;
+        search.setAttribute("placeholder", textArray[0]);
+        setInterval(function () {
+            let search = document.getElementById("search");
+            if (currentIndex >= textArray.length) {
+                currentIndex = 0;
+            }
+            search.setAttribute("placeholder", textArray[currentIndex]);
+            currentIndex++;
+        }, 3000);
+    </script>
+</body>
+
+</html>
