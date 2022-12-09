@@ -14,6 +14,10 @@
             margin: 0;
         }
 
+        body {
+            min-width: 290px;
+        }
+
         .header {
             position: fixed;
             top: 0;
@@ -236,7 +240,8 @@
             margin-bottom: 7px;
             display: none;
         }
-        button{
+
+        button {
             margin: 10px 0 0 267px;
             width: 16px;
             height: 16px;
@@ -268,10 +273,10 @@
             <div class="apphome">
                 <div class="cl"><span class="sp">搜索历史</span>
                     <button id="clearSearchHistoryBtn">
-                        
+
                     </button>
                 </div>
-                   
+
                 <div>
                     <ul id="searchHistory">
 
@@ -393,7 +398,7 @@
             }
             let lis = ul.querySelectorAll(".hotWord.fineBorderBottom");
             for (let ii = 0; ii < lis.length; ii++) {
-                lis[ii].addEventListener("click", function(e) {
+                lis[ii].addEventListener("click", function (e) {
                     let title = lis[ii].querySelector(".hotWord-title.ellipsis").innerHTML;
                     document.getElementById("search").value = title;
                     e.stopPropagation();
