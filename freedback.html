@@ -112,13 +112,17 @@
         button {
             width: 20%;
             height: 25px;
-            margin: auto;
         }
 
         .jubao {
             margin-top: 20px;
             padding-top: 20px;
             border-top: 1px solid #ddd;
+        }
+        .right{
+           display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
     </style>
 </head>
@@ -142,7 +146,8 @@
                     <span>截屏图（可选项）</span>
                     <br>
                     <input type="file" class="pic_file">
-                    <a href="./tiaozhuan.html">
+                    <br>
+                    <a href="./tiaozhuan.html" class="right">
                         <button type="submit" class="tijiao">提交</button>
                     </a>
                 </form>
