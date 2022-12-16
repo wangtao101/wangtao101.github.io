@@ -24,7 +24,6 @@
 
     #indexheader {
         font-size: 14.4px;
-        max-width: 1080px;
         position: relative;
         z-index: 128;
     }
@@ -144,7 +143,6 @@
         display: block;
         width: 100%;
         height: 44px;
-        cursor: pointer;
         text-align: center;
         color: #fff;
         background: #ddd;
